@@ -24,16 +24,7 @@ namespace InotASPNetCoreStub.Controllers
         {
             _logger = logger;
 
-            if (content == null)
-            {
-                string physicalWebRootPath = Path.GetDirectoryName(Assembly.GetEntryAssembly().Location);
-                fileBytes = System.IO.File.ReadAllBytes($"{physicalWebRootPath}/download.msi");
-                var mimeType = "application/octet-stream";
-                content = new FileContentResult(fileBytes, mimeType)
-                {
-                    FileDownloadName = fileName
-                };
-            }
+           
 
             _logger.LogInformation("test controller constructor");
         }

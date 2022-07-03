@@ -16,11 +16,16 @@ namespace asptest
             CreateHostBuilder(args).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IHostBuilder CreateHostBuilder(string[] args)
+        {
+            string listenUrl = $"http://0.0.0.0:8080";
+
+            return Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    webBuilder.UseUrls(listenUrl);
                     webBuilder.UseStartup<Startup>();
                 });
+        }
     }
 }
