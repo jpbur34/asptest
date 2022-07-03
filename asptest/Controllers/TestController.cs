@@ -37,6 +37,13 @@ namespace InotASPNetCoreStub.Controllers
             return "simple3";
         }
 
+        [HttpGet("crash")]
+        public async Task<string> Crash()
+        {
+            System.Environment.Exit(15);
+            return "simple3";
+        }
+
         [HttpGet("slow")]
         public async Task<string> GetSlow()
         {
