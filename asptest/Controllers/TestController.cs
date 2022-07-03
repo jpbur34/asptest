@@ -34,7 +34,7 @@ namespace InotASPNetCoreStub.Controllers
         {
             int tempo = rnd.Next(100, 300);
             await Task.Delay(tempo);
-            return "simple";
+            return "simple2";
         }
 
         [HttpGet("slow")]
